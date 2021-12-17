@@ -148,7 +148,7 @@ st.markdown("## Negara dengan jumlah produksi minyak terkecil pada tahun {}".for
 st.text("{} \n{} \n{} \n{} \n{}".format(jumlah_produksi, kode_negara, nama_negara,  region_negara, subregion_negara))
 
 dfkumulatifmin = dfkumulatif[dfkumulatif.kumulatif !=0]
-dfkumulatifmin = dfkumulatifmin.sort_value(by=['kumulatif'], ascending = True)
+dfkumulatifmin = dfkumulatifmin.sort_values(by=['kumulatif'], ascending = True)
 jumlah_produksi = dfkumulatifmin[:1].iloc[0]['kumulatif']
 kode_negara = dfkumulatifmin[:1].iloc[0]['kode_negara']
 nama_negara = ""
