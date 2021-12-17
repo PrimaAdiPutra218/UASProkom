@@ -13,6 +13,8 @@ df_csv = pd.read_csv("produksi_minyak_mentah.csv")
 df_json = pd.DataFrame.from_dict(file_json, orient = 'columns')
 #--------------------------------------------------------------
 
+
+st.markdown("## Aplikasi Analisis Data Minyak Mentah")
 #====================  SOAL NOMOR 1 ====================== 
 #Menghilangkan data yang tidak termasuk negara (Organisasi)
 list1 = []
@@ -33,7 +35,7 @@ for i in range (len(df_csv)):
 #input nama negara dari user 
 N = st.text_input("Masukkan nama negara: ")
 #----------------------------------
-
+st.markdown("## Grafik Hubungan Antara Produksi Minyak Dengan Waktu Pada Suatu Negara")
 #membuat grafik produksi negara terhadap waktu 
 df1 = df_csv.loc[df_csv['kode_negara']==N]
 
@@ -49,7 +51,7 @@ st.pyplot(graph1)
 
 
 
-#2
+#============SOAL NO 2===================
 tahun = []
 for i in list(df_csv['tahun']):
     if i not in tahun:
@@ -161,7 +163,7 @@ for i in range(len(df_json)):
         region_negara = list(df_json['region'])[i]
         subregion_negara = list(df_json['sub-region'])[i]
 
-st.markdown("Negara dengan jumlah produksi minyak terkecil pada keseluruhan tahun")
+st.markdown("## Negara dengan jumlah produksi minyak terkecil pada keseluruhan tahun")
 st.text("{} \n{} \n{} \n{} \n{}".format(jumlah_produksi, kode_negara, nama_negara,  region_negara, subregion_negara))
 #Bagian 3
 dfproduksinol = df2[df2.produksi == 0]
